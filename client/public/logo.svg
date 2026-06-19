@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 36">
+  <!-- Icon mark: chat bubble -->
+  <rect x="0" y="2" width="28" height="20" rx="5" fill="#ffffff"/>
+  <circle cx="7"  cy="12" r="2" fill="#000000"/>
+  <circle cx="14" cy="12" r="2" fill="#000000"/>
+  <circle cx="21" cy="12" r="2" fill="#000000"/>
+  <!-- Tail -->
+  <polygon points="5,21 12,21 5,28" fill="#ffffff"/>
+  <!-- Wordmark -->
+  <text
+    x="36" y="20"
+    font-family="-apple-system, 'Inter', 'SF Pro Display', BlinkMacSystemFont, sans-serif"
+    font-size="14"
+    font-weight="600"
+    fill="#ffffff"
+    letter-spacing="-0.25"
+    dominant-baseline="middle"
+  >Real Online Chat</text>
+</svg>

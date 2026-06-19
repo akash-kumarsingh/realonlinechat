@@ -1,0 +1,5 @@
+# Cloudflare Pages — Canonical redirects
+# Force all traffic to primary domain
+
+# www → non-www
+https://www.realonlinechat.com/* https://realonlinechat.com/:splat 301!
