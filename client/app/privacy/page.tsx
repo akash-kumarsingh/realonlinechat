@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Logo from '@/components/ui/Logo';
 import { ArrowLeft } from 'lucide-react';
+import Logo from '@/components/ui/Logo';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — Real Online Chat',
@@ -23,16 +23,16 @@ const SECTIONS = [
     body: 'Messages are transmitted in real-time between users and are NOT stored on our servers. Once a session ends, message content is permanently gone. We cannot retrieve past conversations.',
   },
   {
-    title: 'Reports & safety',
+    title: 'Reports and safety',
     body: 'When you submit a report, we store the session IDs involved, the reason, and timestamp. This data is used solely for safety enforcement and is deleted after 30 days.',
   },
   {
-    title: 'Cookies & storage',
+    title: 'Cookies and storage',
     body: 'We use minimal browser session storage to maintain your active connection state. We do not use tracking cookies or advertising cookies.',
   },
   {
     title: 'Third parties',
-    body: 'We do not sell, rent, or share your data with third parties for marketing. We use infrastructure providers (hosting, databases) that process data on our behalf under strict agreements.',
+    body: 'We do not sell, rent, or share your data with third parties for marketing. We use infrastructure providers that process data on our behalf under strict agreements.',
   },
   {
     title: 'Your rights',
@@ -47,14 +47,13 @@ const SECTIONS = [
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background grid-lines noise">
-      {/* Nav */}
       <nav className="sticky top-0 z-30 border-b border-[#111] bg-black/90 backdrop-blur-xl">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center gap-4">
           <Link href="/" className="btn btn-ghost btn-icon">
             <ArrowLeft size={14} />
           </Link>
           <Logo variant="full" height={28} href="/" />
-          </div>
+        </div>
       </nav>
 
       <div className="max-w-2xl mx-auto px-4 py-16">

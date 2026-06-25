@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowLeft, MessageSquare } from 'lucide-react';
 import Logo from '@/components/ui/Logo';
-import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Terms of Service — Real Online Chat',
@@ -24,7 +24,7 @@ const SECTIONS = [
   },
   {
     title: 'Disclaimer',
-    body: 'Real Online Chat is provided "as is" without warranty of any kind. We are not responsible for the conduct of users or the content they share. Use the service at your own risk.',
+    body: 'Real Online Chat is provided as-is without warranty of any kind. We are not responsible for the conduct of users or the content they share. Use the service at your own risk.',
   },
   {
     title: 'Limitation of liability',
@@ -47,13 +47,13 @@ const SECTIONS = [
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-background grid-lines noise">
-      {/* Nav */}
       <nav className="sticky top-0 z-30 border-b border-[#111] bg-black/90 backdrop-blur-xl">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center gap-4">
           <Link href="/" className="btn btn-ghost btn-icon">
             <ArrowLeft size={14} />
           </Link>
           <Logo variant="full" height={28} href="/" />
+        </div>
       </nav>
 
       <div className="max-w-2xl mx-auto px-4 py-16">
