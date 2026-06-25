@@ -4,8 +4,8 @@ export const runtime = 'edge';
 export const contentType = 'image/png';
 export const size = { width: 1200, height: 630 };
 
-export default async function OGImage() {
-  return new ImageResponse(
+export default async function GET() {
+return new ImageResponse(
     (
       <div
         style={{
