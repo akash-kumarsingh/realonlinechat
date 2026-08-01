@@ -521,5 +521,11 @@ const initGroupRooms = (io) => {
     });
   });
 };
-
-module.exports = { initSocket, getOnlineCount, initGroupRooms, ROOM_DEFINITIONS };
+module.exports = { 
+  initSocket,
+  getOnlineCount,
+  initGroupRooms,
+  ROOM_DEFINITIONS,
+  assignUniqueNickname,
+  releaseNickname,
+};

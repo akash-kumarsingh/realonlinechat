@@ -1,4 +1,4 @@
-require('dotenv').config();
+const { initPrivateRooms } = require('./privateRooms')
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
@@ -76,6 +76,7 @@ const PORT = process.env.PORT || 4000;
 const start = async () => {
   await connectDB();
   initSocket(io);
+  initPrivateRooms(io);
   initGroupRooms(io);
 
   server.listen(PORT, () => {
