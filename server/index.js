@@ -87,3 +87,43 @@ const start = async () => {
 };
 
 start();
+const start = async () => {
+  await connectDB();
+  initSocket(io);
+  initPrivateRooms(io);
+  server.listen(PORT, () => {
+    console.log(`🚀 Real Online Chat server running on port ${PORT}`);
+    console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`   Client URL: ${CLIENT_URL}`);
+  });
+
+  // ← YE ADD KARO YAHAN
+  const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+  if (TELEGRAM_TOKEN) {
+    const https = require('https');
+    const SITE_URL = process.env.CLIENT_URL || 'https://realonlinechat.vercel.app';
+
+    const data = JSON.stringify({
+      type: 'web_app',
+      text: '💬 Open Chat',
+      web_app: { url: SITE_URL }
+    });
+
+    const req = https.request({
+      hostname: 'api.telegram.org',
+      path: `/bot${TELEGRAM_TOKEN}/setChatMenuButton`,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(data)
+      }
+    }, (res) => {
+      let body = '';
+      res.on('data', d => body += d);
+      res.on('end', () => console.log('🤖 Telegram menu button set:', body));
+    });
+    req.on('error', e => console.error('❌ Telegram error:', e.message));
+    req.write(data);
+    req.end();
+  }
+};
